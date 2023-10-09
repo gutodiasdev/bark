@@ -7,7 +7,7 @@ from hubert.customtokenizer import CustomTokenizer
 import torchaudio
 import torch
 
-device = 'cpu' # or 'cpu'
+device = 'gpu' # or 'cpu'
 model = load_codec_model(use_gpu=True if device == 'cuda' else False)
 hubert_manager = HuBERTManager()
 hubert_manager.make_sure_hubert_installed()
