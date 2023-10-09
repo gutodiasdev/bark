@@ -116,7 +116,7 @@ class CustomTokenizer(nn.Module):
             model = CustomTokenizer()
         else:
             model = CustomTokenizer(data_from_model.hidden_size, data_from_model.input_size, data_from_model.output_size, data_from_model.version)
-        model.load_state_dict(torch.load(path))
+        model.load_state_dict(torch.load(path, map_location=torch.device('cpu')))
         if map_location:
             model = model.to(map_location)
         return model
@@ -150,7 +150,7 @@ class Data:
         return json.dumps(data)
 
 
-def auto_train(data_path, save_path='model.pth', load_model: str | None = None, save_epochs=1):
+def auto_train(data_path, save_path='model.pth', load_model: str or None = None, save_epochs=1):
     data_x, data_y = [], []
 
     if load_model and os.path.isfile(load_model):
