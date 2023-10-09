@@ -30,9 +30,9 @@ preload_models(
     path="models"
 )
 
-# if use_rvc:
-#     from rvc_infer import get_vc, vc_single
-#     get_vc(rvc_path, device, is_half)
+if use_rvc:
+    from rvc_infer import get_vc, vc_single
+    get_vc(rvc_path, device, is_half)
 
 # simple generation
 text_prompt = "Olá, meu nome é Augusto. Este é o clone da minha voz"
