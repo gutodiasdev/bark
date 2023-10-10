@@ -30,15 +30,15 @@ preload_models(
     path="models"
 )
 
-if use_rvc:
-    from rvc_infer import get_vc, vc_single
-    get_vc(rvc_path, device, is_half)
+# if use_rvc:
+#     from rvc_infer import get_vc, vc_single
+#     get_vc(rvc_path, device, is_half)
 
 # simple generation
 text_prompt = "Olá, meu nome é Augusto. Este é o clone da minha voz"
 voice_name = "cloned_voice" # use your custom voice name here if you have on
 
-filepath = "output/audio_cloned_voice3.wav"
+filepath = "output/audio_cloned_voice4.wav"
 audio_array = generate_audio(text_prompt, history_prompt=voice_name, text_temp=0.7, waveform_temp=0.7)
 write_wav(filepath, SAMPLE_RATE, audio_array)
 
