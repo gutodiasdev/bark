@@ -2,7 +2,6 @@
 # https://github.com/replicate/cog/blob/main/docs/python.md
 
 from cog import BasePredictor, Input, Path
-from IPython.display import Audio
 from scipy.io.wavfile import write as write_wav
 
 from bark.api import generate_audio
