@@ -54,3 +54,4 @@ class Predictor(BasePredictor):
         filepath = "output/audio_cloned_augusto.wav"
         audio_array = generate_audio(text_prompt, history_prompt=voice_name, text_temp=0.7, waveform_temp=0.7)
         write_wav(filepath, SAMPLE_RATE, audio_array)
+        return audio_array
