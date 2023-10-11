@@ -1,0 +1,5 @@
+scipy
+encodec
+funcy
+tqdm
+transformers
